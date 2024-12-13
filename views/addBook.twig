@@ -10,11 +10,19 @@
     <label for="ISBN">ISBN:</label>
     <input type="text" id="ISBN" name="ISBN" required>
     <label for="categorie">Catégorie:</label>
-    <input type="text" id="categorie" name="categorie" required>
+    <select id="categorie" name="categorie" required>
+      {% for categorie in categorieValues %}
+        <option value="{{ categorie }}">{{ categorie }}</option>
+      {% endfor %}
+    </select>
     <label for="nombrePages">Nombre de pages:</label>
     <input type="number" id="nombrePages" name="nombrePages" required>
     <label for="statutLecture">Statut de lecture:</label>
-    <input type="text" id="statutLecture" name="statutLecture" required>
+    <select id="statutLecture" name="statutLecture" required>
+      {% for statut in statutLectureValues %}
+        <option value="{{ statut }}">{{ statut }}</option>
+      {% endfor %}
+    </select>
     <label for="notesPersonnelles">Notes personnelles:</label>
     <textarea id="notesPersonnelles" name="notesPersonnelles"></textarea>
     <button type="submit">Ajouter</button>

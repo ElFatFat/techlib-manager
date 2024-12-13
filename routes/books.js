@@ -4,9 +4,14 @@ var Livre = require('../models/Livre');
 
 // ✨ Création : Formulaire d'ajout d'un nouveau livre
 router.get('/new', function(req, res, next) {
-  res.render('addBook', { title: 'Ajouter un nouveau livre' });
-});
-
+  const categorieValues = Livre.schema.path('categorie').enumValues;
+  const statutLectureValues = Livre.schema.path('statutLecture').enumValues;
+  res.render('addBook', { 
+    title: 'Ajouter un nouveau livre',
+    categorieValues,
+    statutLectureValues
+  });});
+  
 router.post('/new', async function(req, res, next) {
   try {
     const newLivre = new Livre(req.body);
