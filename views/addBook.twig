@@ -1,0 +1,22 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <h1>{{ title }}</h1>
+  <form action="/books/new" method="post">
+    <label for="titre">Titre:</label>
+    <input type="text" id="titre" name="titre" required>
+    <label for="auteurs">Auteurs:</label>
+    <input type="text" id="auteurs" name="auteurs" required>
+    <label for="ISBN">ISBN:</label>
+    <input type="text" id="ISBN" name="ISBN" required>
+    <label for="categorie">Catégorie:</label>
+    <input type="text" id="categorie" name="categorie" required>
+    <label for="nombrePages">Nombre de pages:</label>
+    <input type="number" id="nombrePages" name="nombrePages" required>
+    <label for="statutLecture">Statut de lecture:</label>
+    <input type="text" id="statutLecture" name="statutLecture" required>
+    <label for="notesPersonnelles">Notes personnelles:</label>
+    <textarea id="notesPersonnelles" name="notesPersonnelles"></textarea>
+    <button type="submit">Ajouter</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <h1>{{ title }}</h1>
+  <p>Titre: {{ livre.titre }}</p>
+  <p>Auteurs: {{ livre.auteurs }}</p>
+  <p>ISBN: {{ livre.ISBN }}</p>
+  <p>Catégorie: {{ livre.categorie }}</p>
+  <p>Nombre de pages: {{ livre.nombrePages }}</p>
+  <p>Statut de lecture: {{ livre.statutLecture }}</p>
+  <p>Notes personnelles: {{ livre.notesPersonnelles }}</p>
+  <a href="/books/{{ livre._id }}/edit">Modifier</a>
+  <form action="/books/{{ livre._id }}/delete" method="post">
+    <button type="submit">Supprimer</button>
+  </form>
+{% endblock %}

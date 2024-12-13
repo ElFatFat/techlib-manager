@@ -1,0 +1,10 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <h1>{{ title }}</h1>
+  <ul>
+    {% for livre in livres %}
+      <li><a href="/books/{{ livre._id }}">{{ livre.titre }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
